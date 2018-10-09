@@ -18,7 +18,7 @@ body {
     color: #600000;
 }
 
-ul, h1, h2, label, button, .submit-button, p {
+ul, h1, label, button, .submit-button, p {
     background-color: #ffecdb;
     border: 1px solid #600000;
     border-radius: 10px;
@@ -43,11 +43,15 @@ main {
     max-width: 960px;
 }
 
+legend {
+    font-size: 0;
+}
+
 .feedback-page, .final-page {
     font-size: 0;
 }
 
-h1, h2, p {
+h1, p {
     margin-bottom: 20px;
     padding: 5px 5px 2px;
 }
@@ -58,6 +62,11 @@ button, .submit-button {
     color: #600000;
     font-size: 20px;
     padding: 5px 20px 1px;
+}
+
+.question {
+    font-size: 24px;
+    line-height: 1.45;
 }
 
 fieldset {
@@ -106,12 +115,12 @@ input:checked ~ .radio {
     border: 7px solid #600000;
 }
 
-p {
+p, .correct, .incorrect {
     font-size: 20px;
     display: inline-block;
 }
 
-p.incorrect {
+h1.incorrect {
 	color: #ffecdb;
     background-color: #600000;
 }
@@ -124,8 +133,9 @@ p.incorrect {
     margin-top: 20px;
 }
 
-p.final-score {
+h1.final-score {
     font-size: 24px;
+    display: inline-block;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -149,7 +159,7 @@ p.final-score {
     h1 {
         line-height: 1.25;
     }
-    h2 {
+    .question {
         font-size: 22px;
         line-height: 1.25;
     }
@@ -173,7 +183,7 @@ p.final-score {
         font-size: 26px;
         line-height: 1.25;
     }
-    h2 {
+    .question {
         font-size: 20px;
         line-height: 1.25;
     }

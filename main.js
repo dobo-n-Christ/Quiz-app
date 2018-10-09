@@ -255,9 +255,10 @@ function handleClickStart() {
 function generateQuestionAnswersString() {
     const questionAnswers = STORE[questionIndex];
     return `
-    <h2>${questionAnswers.question}</h2>
+    <h1 class="question">${questionAnswers.question}</h1>
     <form>
         <fieldset name="choices">
+            <legend>Answer Choices</legend>
             <label>
                 ${questionAnswers.choices[0]}
                 <input type="radio" name="choices" value="choice-a" required>
@@ -304,7 +305,7 @@ function handleClickSubmit() {
 function generateCorrectAnswerString() {
     const questionAnswers = STORE[questionIndex];
     return `
-    <p>Correct</p>
+    <h1 class="correct">Correct</h1>
     <div class="row">
         <div class="col-6">
             <img src="${questionAnswers.src1}" class="image 1" alt="${questionAnswers.alt1}">
@@ -336,8 +337,7 @@ function renderFeedbackPageCorrect() {
 function generateIncorrectAnswerString() {
     const questionAnswers = STORE[questionIndex];
     return `
-    <p class="incorrect">Incorrect</p>
-    <br>
+    <h1 class="incorrect">Incorrect</h1><br>
     <p>Correct Answer:<br>${questionAnswers.correctAnswer}</p>
     <div class="row">
         <div class="col-6">
@@ -412,10 +412,8 @@ function handleClickNext() {
 //this generates a final page html string
 function generateFinalPageString() {
     return `
-    <p class="final-score">Final Score:
-    <br>
-    ${scoreCorrect}/${STORE.length}</p>
-    <br>
+    <h1 class="final-score">Final Score:<br>
+    ${scoreCorrect}/${STORE.length}</h1><br>
     <button type="button" class="js-restart-button">Restart Quiz</button>
     `;
 }
